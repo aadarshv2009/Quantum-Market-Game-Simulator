@@ -5,7 +5,9 @@ from simulator import run_simulation, create_table, expected_payoff, winner, pay
 st.set_page_config(page_title="Quantum Game Theory Simulator",layout="wide")
 if "game_started" not in st.session_state:
     st.session_state.game_started = False
-
+with st.sidebar:
+    if st.button("Restart Game"):
+        st.rerun()
 st.info("""This game models two traders that make buy/sell decision using quantum properties.
 Each trader chooses an angle θ: θ closer to 0 means mostly sell, θ closer to π means mostly buy, while θ closer to π/2 means mixed strategy.
 Quantum entanglement changes how traders interact with each other, correlating their actions.""")
