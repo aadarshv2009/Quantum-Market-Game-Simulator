@@ -6,7 +6,9 @@ st.set_page_config(page_title="Quantum Game Theory Simulator",layout="wide")
 if "game_started" not in st.session_state:
     st.session_state.game_started = False
 with st.sidebar:
+    st.header("Controls")
     if st.button("Restart Game"):
+        st.session_state.clear()
         st.rerun()
 st.info("""This game models two traders that make buy/sell decision using quantum properties.
 Each trader chooses an angle θ: θ closer to 0 means mostly sell, θ closer to π means mostly buy, while θ closer to π/2 means mixed strategy.
