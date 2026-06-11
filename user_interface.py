@@ -10,7 +10,7 @@ with st.sidebar:
     if st.button("Restart Game"):
         st.session_state.clear()
         st.rerun()
-st.info("""This game models two traders that make buy/sell decision using quantum properties.
+st.info("""This game models two traders that make buy/sell decisions using quantum properties.
 Each trader chooses an angle θ: θ closer to 0 means mostly sell, θ closer to π means mostly buy, while θ closer to π/2 means mixed strategy.
 Quantum entanglement changes how traders interact with each other, correlating their actions.""")
 def strategy(angle):
@@ -74,8 +74,8 @@ if not st.session_state.game_started:
 
 
     mode=st.sidebar.selectbox("Choose mode", ["Random vs Random","User vs Random","User vs User"])
-    Entanglement=st.sidebar.checkbox("Enable Entanglement",help="With entanglement enabled, the actions of one trader affects the other trader's actions.")  
-    shots=st.sidebar.slider("Number of shots:", 100,10000,1000,help="More shots increases the accuracy of the measurements")
+    Entanglement=st.sidebar.checkbox("Enable Entanglement",help="With entanglement enabled, the action of one trader affects the other trader's action.")  
+    shots=st.sidebar.slider("Number of shots:", 100,10000,1000,help="More shots increase the accuracy of the measurements")
 
 
 
